@@ -1,0 +1,23 @@
+[project]
+name = "MOO"
+version = "1.0.0"
+description = "Multi-view Oriented Observations (MOO) dataset toolkit for viewpoint analysis in cattle re-identification"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "h5py>=3.11.0",
+    "numpy>=1.24.4",
+    "pillow-simd>=9.5.0.post2",
+    "tqdm>=4.67.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.6",
+]
+
+[tool.ruff]
+line-length = 120
+extend-include = [
+    "*.ipynb", # Include jupyter notebooks
+]

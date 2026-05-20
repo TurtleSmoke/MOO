@@ -1,0 +1,115 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{MOO Benchmark}
+\label{subsec:_benchmark}
+
+We evaluate MOO under AG-ReID scenarios in \Cref{tab:benchmark}.
+Despite the controlled synthetic environment, the task remains highly challenging: the upper bound (supervised on Top-Side) reaches only $52.5\%$ mAP, far from saturation.
+Furthermore, cross-view generalization is difficult.
+In the \textbf{Side $\to$ Top} scenario, performance drops from $41.6\%$ (using all views) to just $13.0\%$ when trained on Side views only, and $25.0\%$ when trained on Top views only.
+
+\begin{table}[tbp]
+    \centering
+    \caption{
+        mAP and Rank-1 comparison for three training configurations across three evaluation (query $\rightarrow$ gallery) scenarios.
+    }
+    \label{tab:benchmark}
+
+    \scriptsize
+
+    \begin{tabular}{l cc cc cc}
+        \toprule
+
+        & \multicolumn{2}{c}{\textbf{Top $\rightarrow$ Side}}
+        & \multicolumn{2}{c}{\textbf{Side $\rightarrow$ Top}}
+        & \multicolumn{2}{c}{\textbf{Top-Side $\rightarrow$ Top-Side}} \\
+
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+
+        \textbf{Training}
+        & \textbf{mAP} & \textbf{R-1}
+        & \textbf{mAP} & \textbf{R-1}
+        & \textbf{~~~~mAP} & \textbf{R-1} \\
+
+        \midrule
+
+        Train Side
+        & 13.1 & 35.6
+        & 13.0 & 75.5
+        & ~~~~20.6 & 97.4 \\
+
+        Train Top
+        & 22.0 & 94.7
+        & 25.0 & 29.7
+        & ~~~~39.4 & 87.2 \\
+
+        Train Top-Side
+        & \textbf{39.4} & \textbf{96.2}
+        & \textbf{41.6} & \textbf{79.7}
+        & ~~~~\textbf{52.5} & \textbf{99.7} \\
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Real-World Transferability}
+\label{subsec:real_world_transfer}
+
+We evaluate MOO's transferability on four real-world datasets: FriesianCattle2015 (FC15)~\cite{andrewAutomaticIndividualHolstein2016}, FriesianCattle2017 (FC17) and AerialCattle2017 (AC17)~\cite{andrewVisualLocalisationIndividual2017}, and Cows2021 (C21)~\cite{gaoSelfSupervisionVideoIdentification2021b}.
+We assess the benefit of transferring geometric priors by comparing a standard ImageNet-21k baseline against models that undergo additional pre-training on MOO (using either All views or Top views only).
+
+In the zero-shot setup (\Cref{tab:real}), adding MOO pre-training consistently outperforms the ImageNet-21k baseline.
+%Notably, adding a pre-training solely on \textbf{MOO Top-views} often yields superior results than using the full dataset.
+For example, on Cows21 (a top-down dataset), MOO Top-view pre-training achieves $32.1\%$ mAP zero-shot, compared to $13.4\%$ with All-views and $9.4\%$ with the baseline.
+This underscores the value of MOO's annotations: they allow for strategic selection of training data.
+
+In the supervised setup, the ImageNet-21k + MOO initialization improves performance on all datasets except FriesianCattle2017.
+This could be attributed to confounding factors in this dataset, such as multiple cows per frame, occlusions, and complex backgrounds. %, which may diminish the benefits of MOO's geometric priors.
+Overall, these results confirm MOO's practical relevance, providing features that generalize effectively to real images.
+%Overall, these results confirm MOO's practical relevance, providing features that generalize effectively to real images and that viewpoint control during training maximizes real-world performance.
+
+\begin{table}[t]
+    \centering
+    \caption{
+        Transfer learning results on four real-world datasets.
+        We compare the standard ImageNet baseline with our pre-training on MOO.
+        \textbf{Top:} Zero-shot evaluation.
+        \textbf{Bottom:} Supervised training on the target dataset.
+    }
+    \label{tab:real}
+
+    \scriptsize
+    \setlength{\tabcolsep}{2pt}
+
+    \begin{tabular}{l cc cc cc cc}
+        \toprule
+
+        & \multicolumn{2}{c}{\textbf{FC15}} & \multicolumn{2}{c}{\textbf{FC17}} & \multicolumn{2}{c}{\textbf{AC17}} & \multicolumn{2}{c}{\textbf{C21}} \\
+
+        \cmidrule(lr){2-3}
+        \cmidrule(lr){4-5}
+        \cmidrule(lr){6-7}
+        \cmidrule(lr){8-9}
+
+        \textbf{Initialization $\rightarrow$ Pre-training} & \textbf{mAP}  & \textbf{R-1}  & \textbf{mAP}  & \textbf{R-1}  & \textbf{mAP}  & \textbf{R-1} & \textbf{mAP} & \textbf{R-1} \\
+
+        \midrule
+        \multicolumn{9}{c}{\textit{Zero-shot (Direct Transfer)}} \\
+        \midrule
+
+        ImageNet21K (Baseline)                             & 51.1          & 46.8          & 45.8          & 60.0          & 55.5          & 79.6          & 9.4           & 32.4          \\
+        ImageNet $\rightarrow$ MOO (All)                   & 59.2          & 56.0          & 40.1          & 57.1          & \textbf{67.5} & \textbf{88.0} & 13.4          & 41.2          \\
+        ImageNet $\rightarrow$ MOO (Top)                   & \textbf{63.4} & \textbf{56.7} & \textbf{53.9} & \textbf{63.3} & 65.3          & 84.4          & \textbf{32.1} & \textbf{67.4} \\
+
+        \midrule
+        \multicolumn{9}{c}{\textit{Supervised (Trained on Target)}} \\
+        \midrule
+
+        ImageNet21K (Baseline)                             & 73.7          & 79.6          & \textbf{90.0} & \textbf{89.5} & 81.8          & 91.2          & 94.0          & 98.0          \\
+        ImageNet $\rightarrow$ MOO (All)                   & 89.2          & 94.4          & 83.9          & 86.8          & 82.4          & 91.7          & 94.2          & 98.0          \\
+        ImageNet $\rightarrow$ MOO (Top)                   & \textbf{91.1} & \textbf{96.3} & 84.2          & 86.5          & \textbf{89.0} & \textbf{92.8} & \textbf{94.4} & \textbf{98.3} \\
+
+        \bottomrule
+    \end{tabular}
+\end{table}

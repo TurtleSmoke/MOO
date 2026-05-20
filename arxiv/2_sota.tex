@@ -1,0 +1,108 @@
+\section{Related work}
+\label{sec:related_work}
+
+\subsection{Dataset Limitations}
+
+Agricultural datasets typically restrict observations to fixed top-down~\cite{andrewVisualIdentificationIndividual2021a, gaoSelfSupervisionVideoIdentification2021b, xiaoCowIdentificationFreestall2022b, yuMultiCamCows2024MultiviewImage2024} or lateral~\cite{zhaoCompactLossVisual2022, liIndividualDairyCow2021} perspectives.
+While some approaches focus on discriminative anatomical regions~\cite{adamSeaTurtleID2022LongspanDataset2024a, shojaeipourAutomatedMuzzleDetection2021, moskvyakLearningLandmarkGuided2020} or combine multiple static views~\cite{bergaminiMultiviewsEmbeddingCattle2018a, li2024cattle}, they lack the continuous viewpoint coverage required for geometric analysis.
+
+In contrast, wildlife datasets~\cite{liATRWBenchmarkAmur2020, parham2017animal, atanbori2024spots, nepovinnykhSealIDSaimaaRinged2022a, dlaminiAutomatedIdentificationIndividuals2020b} offer larger viewpoint diversity but suffer from uncontrolled environments.
+In these scenarios, the absence of precise annotations and the presence of occlusion or background clutter make it difficult to decouple viewpoint effects from environmental bias.
+
+Synthetic data, while used for pose~\cite{Jiang2022BMVC, bonettoZebraPoseZebraDetection2024} or segmentation~\cite{muLearningSyntheticAnimals2020a, pengLearningPartSegmentation2024}, remains underutilized in ReID, with existing examples lacking precise viewpoint labels~\cite{picekCzechLynxDatasetIndividual2025}.
+
+As highlighted in \Cref{tab:dataset metrics}, MOO addresses these limitations by combining controlled diversity with precise geometric metadata.
+
+\begin{table*}[tbp]
+    \centering
+    \caption{
+        Comparison of wildlife and cattle re-identification datasets with MOO.
+        \textit{Non-Correlated Images}: independent frames reducing temporal and background bias.
+        \textit{Synthetic}: includes synthetic data.
+        \textit{Annotation}: viewpoint labels provided as continuous angles (Az./El.) or discrete categories.
+    }
+    \label{tab:dataset metrics}
+
+    \scriptsize
+
+    \begin{tabular}{llrrlccc}
+        \toprule
+
+        \textbf{Species}
+        & \textbf{Dataset}
+        & \textbf{Individuals}
+        & \textbf{Images}
+        & \textbf{View}
+        & \textbf{Synthetic}
+        & \textbf{Non-Correlated Images}
+        & \textbf{Annotation} \\
+
+        \midrule
+        \multirow{6}{*}{Wildlife}
+
+        & ATRW~\cite{liATRWBenchmarkAmur2020}
+        & 107 & 3,649 & Lateral & $\circ$ & $\bullet$ & \\
+
+        & SealID~\cite{nepovinnykhSealIDSaimaaRinged2022a}
+        & 57 & 2,080 & Lateral & $\circ$ & $\bullet$ & \\
+
+        & SeaTurtleIDHeads~\cite{adamSeaTurtleID2022LongspanDataset2024a}
+        & 438 & 8,729 & Lateral & $\circ$ & $\bullet$ & \\
+
+        & Nyala Data~\cite{dlaminiAutomatedIdentificationIndividuals2020b}
+        & 237 & 1,942 & Lateral & $\circ$ & $\bullet$ & Left vs Right \\
+
+        & LeopardID~\cite{atanbori2024spots}
+        & 430 & 6,805 & Lateral & $\circ$ & $\bullet$ & \\
+
+        & CzechLynx~\cite{picekCzechLynxDatasetIndividual2025}
+        & 219+300 & 37k+100k & Lateral & $\bullet$ & $\bullet$ & \\
+
+        \midrule
+        \multirow{10}{*}{Cattle}
+
+        & Multi-views Embedding~\cite{bergaminiMultiviewsEmbeddingCattle2018a}
+        & 439 & 17,802 & Lateral & $\circ$ & $\circ$ & Front vs Side \\
+
+        & OpenCows2020~\cite{andrewVisualIdentificationIndividual2021a}
+        & 46 & 4,736 & Top & $\circ$ & $\circ$ & \\
+
+        & Cows2021~\cite{gaoSelfSupervisionVideoIdentification2021b}
+        & 182 & 13,784 & Top & $\circ$ & $\circ$ & \\
+
+        & MuzzleCows~\cite{shojaeipourAutomatedMuzzleDetection2021}
+        & 300 & 2,900 & Face & $\circ$ & $\bullet$ & \\
+
+        & Dairy Cows 2021~\cite{liIndividualDairyCow2021}
+        & 13 & 1,485 & Lateral & $\circ$ & $\bullet$ & \\
+
+        & MVCAID100~\cite{zhaoCompactLossVisual2022}
+        & 100 & 4,073 & Lateral & $\circ$ & $\circ$ & \\
+
+        & Cows Stall Barn~\cite{xiaoCowIdentificationFreestall2022b}
+        & 48 & 8,640 & Top & $\circ$ & $\circ$ & \\
+
+        & MultiCamCows2024~\cite{yuMultiCamCows2024MultiviewImage2024}
+        & 90 & 101,329 & Top & $\circ$ & $\circ$ & \\
+
+        & CoBRA ReID~\cite{perneelDynamicMultiBehaviourOrientationInvariant2025}
+        & 48 & 11,438 & Top & $\circ$ & $\circ$ & Az. Angle \\
+
+        & \textbf{MOO}
+        & \textbf{1000} & \textbf{128,000} & \textbf{All} & $\bullet$ & $\bullet$ & \textbf{Az. \& El. Angle} \\
+
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+\subsection{Viewpoint-Agnostic ReID}
+\label{subsec:viewpoint-agnostic-reid}
+Viewpoint change is a fundamental challenge in patterned animal ReID, as it deeply influences the perception of discriminative features.
+
+To achieve view-invariance, approaches range from deep metric learning~\cite{zhaoCompactLossVisual2022, zhaoMultiCenterAgentLoss2022} and local descriptor alignment~\cite{chenHolsteinCattleFace2022b} to explicitly targeting discriminative body regions~\cite{shojaeipourAutomatedMuzzleDetection2021, nepovinnykhReidentificationPatternedAnimals2025c, phyoHybridRollingSkew2018, dacLivestockIdentificationUsing2022, nepovinnykhSpeciesAgnosticPatternedAnimal2024}.
+Other works attempt to resolve geometric ambiguity by unwrapping 3D textures into normalized 2D maps~\cite{hiby2009tiger, algasovUnsupervisedPelagePattern2025} or employing multi-branch networks to jointly learn from multiple views~\cite{bergaminiMultiviewsEmbeddingCattle2018a, li2024cattle}.
+
+However, unlike human ReID~\cite{sunDissectingPersonReIdentification2019a}, the animal domain lacks a fundamental quantification of how specific angular changes degrade feature perception.
+We provide this foundational analysis to guide future model development.
+
+In this work, we conduct a systematic study of the impact of viewpoint variations on patterned animals and lay the foundation for developing more robust models for real-world applications.

@@ -1,0 +1,305 @@
+\begin{thebibliography}{39}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adam et~al.(2024)Adam, Čermák, Papafitsoros, and
+  Picek]{adamSeaTurtleID2022LongspanDataset2024a}
+Lukáš Adam, Vojtěch Čermák, Kostas Papafitsoros, and Lukas Picek.
+\newblock {SeaTurtleID2022}: {A} long-span dataset for reliable sea turtle
+  re-identification.
+\newblock In \emph{2024 {IEEE}/{CVF} {Winter} {Conference} on {Applications} of
+  {Computer} {Vision} ({WACV})}, pages 7131--7141, Waikoloa, HI, USA, 2024.
+  IEEE.
+
+\bibitem[Algasov et~al.(2025)Algasov, Nepovinnykh, Zolotarev, Eerola,
+  Kälviäinen, Zemčík, and Stewart]{algasovUnsupervisedPelagePattern2025}
+Aleksandr Algasov, Ekaterina Nepovinnykh, Fedor Zolotarev, Tuomas Eerola,
+  Heikki Kälviäinen, Pavel Zemčík, and Charles~V. Stewart.
+\newblock Unsupervised {Pelage} {Pattern} {Unwrapping} for {Animal}
+  {Re}-identification, 2025.
+
+\bibitem[Andrew et~al.(2016)Andrew, Hannuna, Campbell, and
+  Burghardt]{andrewAutomaticIndividualHolstein2016}
+William Andrew, Sion Hannuna, Neill Campbell, and Tilo Burghardt.
+\newblock Automatic individual holstein friesian cattle identification via
+  selective local coat pattern matching in {RGB}-{D} imagery.
+\newblock In \emph{2016 {IEEE} {International} {Conference} on {Image}
+  {Processing} ({ICIP})}, pages 484--488, 2016.
+
+\bibitem[Andrew et~al.(2017)Andrew, Greatwood, and
+  Burghardt]{andrewVisualLocalisationIndividual2017}
+William Andrew, Colin Greatwood, and Tilo Burghardt.
+\newblock Visual {Localisation} and {Individual} {Identification} of {Holstein}
+  {Friesian} {Cattle} via {Deep} {Learning}.
+\newblock In \emph{2017 {IEEE} {International} {Conference} on {Computer}
+  {Vision} {Workshops} ({ICCVW})}, pages 2850--2859, Venice, 2017. IEEE.
+
+\bibitem[Andrew et~al.(2021)Andrew, Gao, Mullan, Campbell, Dowsey, and
+  Burghardt]{andrewVisualIdentificationIndividual2021a}
+William Andrew, Jing Gao, Siobhan Mullan, Neill Campbell, Andrew~W. Dowsey, and
+  Tilo Burghardt.
+\newblock Visual identification of individual {Holstein}-{Friesian} cattle via
+  deep metric learning.
+\newblock \emph{Computers and Electronics in Agriculture}, 185:\penalty0
+  106133, 2021.
+
+\bibitem[Atanbori(2024)]{atanbori2024spots}
+John Atanbori.
+\newblock Spots-10: Animal pattern benchmark dataset for machine learning
+  algorithms, 2024.
+
+\bibitem[Bergamini et~al.(2018)Bergamini, Porrello, Dondona, Del~Negro,
+  Mattioli, D'alterio, and Calderara]{bergaminiMultiviewsEmbeddingCattle2018a}
+Luca Bergamini, Angelo Porrello, Andrea~Capobianco Dondona, Ercole Del~Negro,
+  Mauro Mattioli, Nicola D'alterio, and Simone Calderara.
+\newblock Multi-views {Embedding} for {Cattle} {Re}-identification.
+\newblock In \emph{2018 14th {International} {Conference} on {Signal}-{Image}
+  {Technology} \& {Internet}-{Based} {Systems} ({SITIS})}, pages 184--191,
+  2018.
+
+\bibitem[Bonetto and Ahmad(2024)]{bonettoZebraPoseZebraDetection2024}
+Elia Bonetto and Aamir Ahmad.
+\newblock {ZebraPose}: {Zebra} {Detection} and {Pose} {Estimation} using only
+  {Synthetic} {Data}, 2024.
+
+\bibitem[Chen et~al.(2022)Chen, Yang, Mai, Liu, Xiong, Kuang, and
+  Gao]{chenHolsteinCattleFace2022b}
+Xiaolang Chen, Tianlong Yang, Kaizhan Mai, Caixing Liu, Juntao Xiong, Yingjie
+  Kuang, and Yuefang Gao.
+\newblock Holstein {Cattle} {Face} {Re}-{Identification} {Unifying} {Global}
+  and {Part} {Feature} {Deep} {Network} with {Attention} {Mechanism}.
+\newblock \emph{Animals}, 12\penalty0 (8):\penalty0 1047, 2022.
+
+\bibitem[Dac et~al.(2022)Dac, Gonzalez~Viejo, Lipovetzky, Tongson, Dunshea, and
+  Fuentes]{dacLivestockIdentificationUsing2022}
+Hai~Ho Dac, Claudia Gonzalez~Viejo, Nir Lipovetzky, Eden Tongson, Frank~R.
+  Dunshea, and Sigfredo Fuentes.
+\newblock Livestock {Identification} {Using} {Deep} {Learning} for
+  {Traceability}.
+\newblock \emph{Sensors}, 22\penalty0 (21):\penalty0 8256, 2022.
+
+\bibitem[Dlamini and Zyl(2020)]{dlaminiAutomatedIdentificationIndividuals2020b}
+Nkosikhona Dlamini and Terence L~van Zyl.
+\newblock Automated {Identification} of {Individuals} in {Wildlife}
+  {Population} {Using} {Siamese} {Neural} {Networks}.
+\newblock In \emph{2020 7th {International} {Conference} on {Soft} {Computing}
+  \& {Machine} {Intelligence} ({ISCMI})}, pages 224--228, 2020.
+
+\bibitem[Dosovitskiy et~al.(2020)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and
+  Houlsby]{dosovitskiyImageWorth16x162020a}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+\newblock An {Image} is {Worth} 16x16 {Words}: {Transformers} for {Image}
+  {Recognition} at {Scale}.
+\newblock In \emph{International Conference on Learning Representations}, 2020.
+
+\bibitem[Gao et~al.(2021)Gao, Burghardt, Andrew, Dowsey, and
+  Campbell]{gaoSelfSupervisionVideoIdentification2021b}
+Jing Gao, Tilo Burghardt, William Andrew, Andrew~W. Dowsey, and Neill~W.
+  Campbell.
+\newblock Towards {Self}-{Supervision} for {Video} {Identification} of
+  {Individual} {Holstein}-{Friesian} {Cattle}: {The} {Cows2021} {Dataset},
+  2021.
+
+\bibitem[Hiby et~al.(2009)Hiby, Lovell, Patil, Kumar, Gopalaswamy, and
+  Karanth]{hiby2009tiger}
+Lex Hiby, Phil Lovell, Narendra Patil, N~Samba Kumar, Arjun~M Gopalaswamy, and
+  K~Ullas Karanth.
+\newblock A tiger cannot change its stripes: using a three-dimensional model to
+  match images of living tigers and tiger skins.
+\newblock \emph{Biology letters}, 5\penalty0 (3):\penalty0 383--386, 2009.
+
+\bibitem[Jiang et~al.(2022)Jiang, Liu, Bai, and Ostadabbas]{Jiang2022BMVC}
+Le Jiang, Shuangjun Liu, Xiangyu Bai, and Sarah Ostadabbas.
+\newblock Prior-aware synthetic data to the rescue: Animal pose estimation with
+  very limited real data.
+\newblock In \emph{33rd British Machine Vision Conference 2022, {BMVC} 2022,
+  London, UK, November 21-24, 2022}. {BMVA} Press, 2022.
+
+\bibitem[Li et~al.(2024)Li, Li, Li, Wang, Yang, and Han]{li2024cattle}
+Dongxu Li, Baoshan Li, Qi Li, Yueming Wang, Mei Yang, and Mingshuo Han.
+\newblock Cattle identification based on multiple feature decision layer
+  fusion.
+\newblock \emph{Scientific Reports}, 14\penalty0 (1):\penalty0 26631, 2024.
+
+\bibitem[Li et~al.(2020)Li, Li, Tang, Qian, and Lin]{liATRWBenchmarkAmur2020}
+Shuyuan Li, Jianguo Li, Hanlin Tang, Rui Qian, and Weiyao Lin.
+\newblock {ATRW}: {A} {Benchmark} for {Amur} {Tiger} {Re}-identification in the
+  {Wild}.
+\newblock In \emph{Proceedings of the 28th {ACM} {International} {Conference}
+  on {Multimedia}}, pages 2590--2598, New York, NY, USA, 2020. Association for
+  Computing Machinery.
+
+\bibitem[Li et~al.(2021)Li, Fu, Sun, Mu, Chen, Li, and
+  Gong]{liIndividualDairyCow2021}
+Shijun Li, Lili Fu, Yu Sun, Ye Mu, Lin Chen, Ji Li, and He Gong.
+\newblock Individual dairy cow identification based on lightweight
+  convolutional neural network.
+\newblock \emph{PLOS ONE}, 16\penalty0 (11):\penalty0 e0260510, 2021.
+
+\bibitem[Luo et~al.(2019)Luo, Gu, Liao, Lai, and Jiang]{9025455}
+Hao Luo, Youzhi Gu, Xingyu Liao, Shenqi Lai, and Wei Jiang.
+\newblock Bag of tricks and a strong baseline for deep person
+  re-identification.
+\newblock In \emph{2019 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition Workshops (CVPRW)}, pages 1487--1495, 2019.
+
+\bibitem[Moskvyak et~al.(2020)Moskvyak, Maire, Dayoub, and
+  Baktashmotlagh]{moskvyakLearningLandmarkGuided2020}
+Olga Moskvyak, Frederic Maire, Feras Dayoub, and Mahsa Baktashmotlagh.
+\newblock Learning {Landmark} {Guided} {Embeddings} for {Animal}
+  {Re}-identification.
+\newblock In \emph{2020 {IEEE} {Winter} {Applications} of {Computer} {Vision}
+  {Workshops} ({WACVW})}, pages 12--19, Snowmass Village, CO, USA, 2020. IEEE.
+
+\bibitem[Mu et~al.(2020)Mu, Qiu, Hager, and
+  Yuille]{muLearningSyntheticAnimals2020a}
+Jiteng Mu, Weichao Qiu, Gregory~D. Hager, and Alan~L. Yuille.
+\newblock Learning {From} {Synthetic} {Animals}.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, pages 12386--12395, 2020.
+
+\bibitem[Nepovinnykh et~al.(2022)Nepovinnykh, Eerola, Biard, Mutka, Niemi,
+  Kunnasranta, and Kälviäinen]{nepovinnykhSealIDSaimaaRinged2022a}
+Ekaterina Nepovinnykh, Tuomas Eerola, Vincent Biard, Piia Mutka, Marja Niemi,
+  Mervi Kunnasranta, and Heikki Kälviäinen.
+\newblock {SealID}: {Saimaa} {Ringed} {Seal} {Re}-{Identification} {Dataset}.
+\newblock \emph{Sensors}, 22\penalty0 (19):\penalty0 7602, 2022.
+
+\bibitem[Nepovinnykh et~al.(2024)Nepovinnykh, Chelak, Eerola, Immonen,
+  Kälviäinen, Kholiavchenko, and
+  Stewart]{nepovinnykhSpeciesAgnosticPatternedAnimal2024}
+Ekaterina Nepovinnykh, Ilia Chelak, Tuomas Eerola, Veikka Immonen, Heikki
+  Kälviäinen, Maksim Kholiavchenko, and Charles~V. Stewart.
+\newblock Species-{Agnostic} {Patterned} {Animal} {Re}-identification by
+  {Aggregating} {Deep} {Local} {Features}.
+\newblock \emph{International Journal of Computer Vision}, 132\penalty0
+  (9):\penalty0 4003--4018, 2024.
+
+\bibitem[Nepovinnykh et~al.(2025)Nepovinnykh, Immonen, Eerola, Stewart, and
+  Kälviäinen]{nepovinnykhReidentificationPatternedAnimals2025c}
+Ekaterina Nepovinnykh, Veikka Immonen, Tuomas Eerola, Charles~V. Stewart, and
+  Heikki Kälviäinen.
+\newblock Re-identification of patterned animals by multi-image feature
+  aggregation and geometric similarity.
+\newblock \emph{IET Computer Vision}, 19\penalty0 (1):\penalty0 e12337, 2025.
+
+\bibitem[Parham et~al.(2017)Parham, Crall, Stewart, Berger-Wolf, and
+  Rubenstein]{parham2017animal}
+Jason Parham, Jonathan Crall, Charles Stewart, Tanya Berger-Wolf, and Daniel~I.
+  Rubenstein.
+\newblock Animal population censusing at scale with citizen science and
+  photographic identification.
+\newblock In \emph{AAAI Spring Symposium-Technical Report}, pages 37--44. AAAI
+  Press, 2017.
+
+\bibitem[Peng et~al.(2024)Peng, He, Kaushik, Xiao, Mu, and
+  Yuille]{pengLearningPartSegmentation2024}
+Jiawei Peng, Ju He, Prakhar Kaushik, Zihao Xiao, Jiteng Mu, and Alan Yuille.
+\newblock Learning {Part} {Segmentation} {From} {Synthetic} {Animals}.
+\newblock In \emph{Proceedings of the IEEE/CVF Winter Conference on
+  Applications of Computer Vision}, pages 90--101, 2024.
+
+\bibitem[Perneel et~al.(2025)Perneel, Adriaens, Verwaeren, and
+  Aernouts]{perneelDynamicMultiBehaviourOrientationInvariant2025}
+Maarten Perneel, Ines Adriaens, Jan Verwaeren, and Ben Aernouts.
+\newblock Dynamic {Multi}-{Behaviour}, {Orientation}-{Invariant}
+  {Re}-{Identification} of {Holstein}-{Friesian} {Cattle}.
+\newblock \emph{Sensors}, 25\penalty0 (10):\penalty0 2971, 2025.
+
+\bibitem[Phyo et~al.(2018)Phyo, Zin, Hama, and
+  Kobayashi]{phyoHybridRollingSkew2018}
+Cho~Nilar Phyo, Thi~Thi Zin, Hiromitsu Hama, and Ikuo Kobayashi.
+\newblock A {Hybrid} {Rolling} {Skew} {Histogram}-{Neural} {Network} {Approach}
+  to {Dairy} {Cow} {Identification} {System}.
+\newblock In \emph{2018 {International} {Conference} on {Image} and {Vision}
+  {Computing} {New} {Zealand} ({IVCNZ})}, pages 1--5, 2018.
+
+\bibitem[Picek et~al.(2024)Picek, Neumann, and
+  Matas]{picekAnimalIdentificationIndependent2024a}
+Lukas Picek, Lukas Neumann, and Jiri Matas.
+\newblock Animal {Identification} with {Independent} {Foreground} and
+  {Background} {Modeling}, 2024.
+
+\bibitem[Picek et~al.(2025)Picek, Belotti, Bojda, Bufka, Cermak, Dula, Dvorak,
+  Hrdy, Jirik, Kocourek, Krausova, Labuda, Straka, Toman, Trulık, Vana, and
+  Kutal]{picekCzechLynxDatasetIndividual2025}
+Lukas Picek, Elisa Belotti, Michal Bojda, Ludek Bufka, Vojtech Cermak, Martin
+  Dula, Rostislav Dvorak, Luboslav Hrdy, Miroslav Jirik, Vaclav Kocourek,
+  Josefa Krausova, Jirı Labuda, Jakub Straka, Ludek Toman, Vlado Trulık,
+  Martin Vana, and Miroslav Kutal.
+\newblock {CzechLynx}: {A} {Dataset} for {Individual} {Identification} and
+  {Pose} {Estimation} of the {Eurasian} {Lynx}, 2025.
+
+\bibitem[Ridnik et~al.(2021)Ridnik, Ben-Baruch, Noy, and
+  Zelnik-Manor]{ridnikImageNet21KPretrainingMasses2021a}
+Tal Ridnik, Emanuel Ben-Baruch, Asaf Noy, and Lihi Zelnik-Manor.
+\newblock {ImageNet}-{21K} {Pretraining} for the {Masses}.
+\newblock In \emph{Thirty-fifth Conference on Neural Information Processing
+  Systems Datasets and Benchmarks Track (Round 1)}, 2021.
+
+\bibitem[Shojaeipour et~al.(2021)Shojaeipour, Falzon, Kwan, Hadavi, Cowley, and
+  Paul]{shojaeipourAutomatedMuzzleDetection2021}
+Ali Shojaeipour, Greg Falzon, Paul Kwan, Nooshin Hadavi, Frances~C. Cowley, and
+  David Paul.
+\newblock Automated {Muzzle} {Detection} and {Biometric} {Identification} via
+  {Few}-{Shot} {Deep} {Transfer} {Learning} of {Mixed} {Breed} {Cattle}.
+\newblock \emph{Agronomy}, 11\penalty0 (11):\penalty0 2365, 2021.
+
+\bibitem[Sun and Zheng(2019)]{sunDissectingPersonReIdentification2019a}
+Xiaoxiao Sun and Liang Zheng.
+\newblock Dissecting {Person} {Re}-{Identification} {From} the {Viewpoint} of
+  {Viewpoint}.
+\newblock In \emph{2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and
+  {Pattern} {Recognition} ({CVPR})}, pages 608--617, Long Beach, CA, USA, 2019.
+  IEEE.
+
+\bibitem[Tian et~al.(2018)Tian, Yi, Li, Li, Zhang, Shi, Yan, and
+  Wang]{tianEliminatingBackgroundbiasRobust2018}
+Maoqing Tian, Shuai Yi, Hongsheng Li, Shihua Li, Xuesen Zhang, Jianping Shi,
+  Junjie Yan, and Xiaogang Wang.
+\newblock Eliminating {Background}-bias for {Robust} {Person}
+  {Re}-identification.
+\newblock In \emph{2018 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and
+  {Pattern} {Recognition}}, pages 5794--5803, Salt Lake City, UT, 2018. IEEE.
+
+\bibitem[Xiao et~al.(2022)Xiao, Liu, Wang, and
+  Si]{xiaoCowIdentificationFreestall2022b}
+Jianxing Xiao, Gang Liu, Kejian Wang, and Yongsheng Si.
+\newblock Cow identification in free-stall barns based on an improved {Mask}
+  {R}-{CNN} and an {SVM}.
+\newblock \emph{Computers and Electronics in Agriculture}, 194:\penalty0
+  106738, 2022.
+
+\bibitem[Yu et~al.(2024{\natexlab{a}})Yu, Burghardt, Dowsey, and
+  Campbell]{yuMultiCamCows2024MultiviewImage2024}
+Phoenix Yu, Tilo Burghardt, Andrew~W. Dowsey, and Neill~W. Campbell.
+\newblock {MultiCamCows2024} -- {A} {Multi}-view {Image} {Dataset} for
+  {AI}-driven {Holstein}-{Friesian} {Cattle} {Re}-{Identification} on a
+  {Working} {Farm}, 2024{\natexlab{a}}.
+
+\bibitem[Yu et~al.(2024{\natexlab{b}})Yu, Vidit, Davydov, Engilberge, and
+  Fua]{yuAddressingElephantRoom2024}
+Yingxue Yu, Vidit Vidit, Andrey Davydov, Martin Engilberge, and Pascal Fua.
+\newblock Addressing the {Elephant} in the {Room}: {Robust} {Animal}
+  {Re}-{Identification} with {Unsupervised} {Part}-{Based} {Feature}
+  {Alignment}, 2024{\natexlab{b}}.
+
+\bibitem[Zhao et~al.(2022)Zhao, Lian, and Xiong]{zhaoMultiCenterAgentLoss2022}
+Jianmin Zhao, Qiusheng Lian, and Neal~N. Xiong.
+\newblock Multi-{Center} {Agent} {Loss} for {Visual} {Identification} of
+  {Chinese} {Simmental} in the {Wild}.
+\newblock \emph{Animals}, 12\penalty0 (4):\penalty0 459, 2022.
+
+\bibitem[Zhao and Lian(2022)]{zhaoCompactLossVisual2022}
+Jian-Min Zhao and Qiu-Sheng Lian.
+\newblock Compact loss for visual identification of cattle in the wild.
+\newblock \emph{Computers and Electronics in Agriculture}, 195:\penalty0
+  106784, 2022.
+
+\end{thebibliography}

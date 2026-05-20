@@ -1,0 +1,65 @@
+---
+title: "MOO: A Multi-view Oriented Observations Dataset for Viewpoint Analysis in Cattle Re-Identification"
+authors:
+  - name: William Grolleau
+    url: https://turtlesmoke.dev
+    institution: Université Paris-Saclay, CEA, List
+    notes: ["*"]
+  - name: Achraf Chaouch
+    institution: Université Paris-Saclay, CEA, List
+  - name: Astrid Sabourin
+    institution: Université Paris-Saclay, CEA, List
+  - name: Guillaume Lapouge
+    institution: Université Paris-Saclay, CEA, List
+    notes: ["*"]
+  - name: Catherine Achard
+    institution: Sorbonne University, CNRS, ISIR
+conference: CVPRW 2026
+notes:
+  - symbol: "*"
+    text: "Contact emails {william.grolleau, guillaume.lapouge}@cea.fr"
+links:
+  - name: Paper
+    url: https://arxiv.org/abs/2603.04314
+    icon: ri:file-pdf-2-fill
+  - name: Code
+    url: https://github.com/TurtleSmoke/MOO
+    icon: ri:github-fill
+  - name: arXiv
+    url: https://arxiv.org/abs/2603.04314
+    icon: academicons:arxiv
+  - name: Dataset
+    url: https://kalisteo.cea.fr/index.php/moo-dataset-en/
+    icon: ri:database-2-fill
+
+description: "A large-scale synthetic dataset with precise viewpoint annotations for systematic analysis and real-world transfer in cattle re-identification."
+theme: white
+favicon: MOO.svg
+---
+
+import HighlightedSection from "./components/HighlightedSection.astro";
+import Figure from "./components/Figure.astro";
+import Picture from "./components/Picture.astro";
+import TwoColumns from "./components/TwoColumns.astro";
+
+import gabstract from "./assets/gabstract.svg?raw";
+
+<Figure>
+    <Fragment slot="figure" set:html={gabstract}  />
+{/*     <Fragment slot="caption">MOO: A synthetic dataset for systematic analysis and real-world transferability. The workflow encompasses (1) individual generation via procedural coat textures; (2) dataset rendering from 128 calibrated viewpoints spanning full azimuth and 0°–85° elevation; and (3) systematic viewpoint analysis and real-world transfer.</Fragment> */}
+</Figure>
+
+MOO (Multi-view Oriented Observations) is a synthetic dataset for cattle re-identification. It comprises 128,000 images of 1,000 individuals. Designed for systematic viewpoint analysis in AG-ReID, each image is annotated with its azimuth and elevation, camera calibration data, and depth maps. MOO enables rigorous study of the impact of viewpoint variations on identification performance, and serves as an effective pre-training source for transfer to real-world data.
+
+MO0 is publicly available at [https://github.com/TurtleSmoke/MOO](https://github.com/TurtleSmoke/MOO).
+
+## Citation
+
+```bibtex
+@article{grolleau2026moo,
+  author  = {Grolleau, William and Chaouch, Achraf and Sabourin, Astrid and Lapouge, Guillaume and Achard, Catherine},
+  title   = {{MOO}: {A} Multi-view Oriented Observations Dataset for Viewpoint Analysis in Cattle Re-Identification},
+  journal = {arXiv preprint arXiv:2603.04314},
+  year    = {2026},
+}
+```

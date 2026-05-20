@@ -1,0 +1,64 @@
+% CVPR 2026 Paper Template; see https://github.com/cvpr-org/author-kit
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%TODO: CAMERA-READY
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+%\usepackage{cvpr}              % To produce the CAMERA-READY version
+%\usepackage[review]{cvpr}      % To produce the REVIEW version
+\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, 
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{*****} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2026}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{MOO: A Multi-view Oriented Observations Dataset for Viewpoint Analysis in Cattle Re-Identification}
+
+%%%%%%%%% AUTHORS - PLEASE UPDATE
+\author{
+William Grolleau$^{1*}$
+Achraf Chaouch$^{1}$
+Astrid Sabourin$^{1}$
+Guillaume Lapouge$^{1*}$
+Catherine Achard$^{2}$ \\
+\\
+{\small $^1$Universite Paris-Saclay, CEA, List, F-91120 Palaiseau, France} \\
+{\small $^2$Sorbonne University, CNRS, ISIR, 4 Place Jussieu, 75005 Paris, France} \\
+{\texttt{\small \{william.grolleau, guillaume.lapouge\}@cea.fr}} \\
+Project page: \url{https://github.com/TurtleSmoke/MOO}
+}
+
+\begin{document}
+    \maketitle
+    \input{0_abstract}
+    \input{1_intro}
+    \input{2_sota}
+    \input{3_dataset}
+    \input{4_exp}
+    \input{5_real}
+    \input{6_conclusion}
+    \input{7_acknowledgement}
+
+    {
+        \small
+        \bibliographystyle{ieeenat_fullname}
+        \bibliography{main}
+    }
+
+\end{document}
+\typeout{get arXiv to do 4 passes: Label(s) may have changed. Rerun}

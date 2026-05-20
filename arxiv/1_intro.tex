@@ -1,0 +1,32 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Animal Re-identification (ReID) aims to recognize and match a specific individual across different non-overlapping camera views, despite variations in pose or viewpoint.
+It is an essential component for automated tracking in wildlife conservation and livestock management.
+
+However, in real-world deployments, camera placement is often constrained by physical limitations in closed spaces or wild environments.
+This is particularly challenging in Aerial-Ground ReID (AG-ReID) scenarios, where models must associate individuals across drastic perspective changes.
+Identifying which viewpoints maximize identification accuracy is therefore crucial for optimizing sensor placement configurations.
+
+While viewpoint dependencies have been extensively studied in human ReID~\cite{sunDissectingPersonReIdentification2019a}, equivalent insights for animals remain lacking.
+This gap is detrimental, as animals often exhibit asymmetric coat patterns, making their identification highly sensitive to viewpoint shifts.
+Existing datasets lack precise angular annotations and cannot perform systematic analysis of viewpoint impact.
+
+To bridge this gap, we introduce the \textbf{M}ulti-view \textbf{O}riented \textbf{O}bservation (MOO), a large-scale synthetic AG-ReID dataset.
+MOO contains 1,000 synthetic cattle identities rendered from 128 uniformly sampled viewpoints spanning $360^\circ$ in azimuth and $-25^\circ$ to $90^\circ$ elevation (relative to the horizontal side view).
+By isolating identity through asymmetric patterns, we systematically analyze viewpoint sensitivity.
+Ultimately, this work lays the foundation for future model development on geometric robustness in animal ReID.
+
+Our contributions are threefold:
+\begin{itemize}
+    \item We present the MOO dataset, a large-scale synthetic benchmark for patterned animal ReID with precise azimuth and elevation annotations.
+    \item We provide the first systematic quantification of elevation impact on patterned animal ReID, identifying a $30^\circ$ elevation angle as a key threshold for generalization.
+    \item We demonstrate that MOO serves as a robust pre-training source, yielding consistent performance gains on real-world datasets in both zero-shot and supervised scenarios.
+\end{itemize}
+
+\begin{figure*}[tbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{gabstract}
+    \caption{MOO: A synthetic dataset for systematic analysis and real-world transferability. The workflow encompasses (1) individual generation; (2) dataset rendering; and (3) systematic analysis and real-world transfer.}
+    \label{fig:gabstract}
+\end{figure*}

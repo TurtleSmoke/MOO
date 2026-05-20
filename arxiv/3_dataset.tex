@@ -1,0 +1,27 @@
+\section{Dataset description}
+\label{sec:dataset_description}
+\subsection{Generation Pipeline}
+\label{subsec:generation-pipeline}
+
+We utilize a realistic \href{https://www.turbosquid.com/3d-models/cow-3d-model/1126261}{3D cow mesh} in a neutral pose.
+To ensure diversity, we generate unique identities based on a \href{https://github.com/CorentinDumery/cow-tex-generator}{procedural texture generation} applied on the mesh via UV mapping as illustrated in \Cref{fig:gabstract}.
+Images are rendered with foreground masks to eliminate background bias, a known issue in ReID~\cite{picekAnimalIdentificationIndependent2024a,tianEliminatingBackgroundbiasRobust2018, yuAddressingElephantRoom2024}.
+The virtual camera samples viewpoints based on a uniform grid of $16$ azimuths ($\phi \in [0^\circ, 360^\circ)$) and $8$ elevations ($\theta \in [0^\circ, 85^\circ]$), with random jitters ($\pm{10}^\circ$ and $\pm{5}^\circ$, respectively) added to simulate continuous variations and prevent grid overfitting.
+All images are rendered using Blender at a resolution of $512 \times 512$ pixels, resulting in a total of $128,000$ images for the $1,000$ identities.
+
+\subsection{Metadata}
+\label{subsec:metadata}
+
+Beyond RGB images, the dataset provides comprehensive annotations for each image.
+This includes angular information ($\phi, \theta$), camera calibration, and labels.
+To improve geometric tasks, we also provide depth maps rendered from the same viewpoints as the RGB images.
+
+\subsection{Evaluation Protocols}
+\label{subsec:eval_prot}
+
+We partition the dataset equally into training and testing sets, with $500$ identities per set.
+To simulate realistic monitoring scenarios, images captured below $30^\circ$ are classified as side views, while images above $30^\circ$ are classified as top views.
+
+We establish three training configurations: Side-only, Top-only, and Top-Side.
+Similarly to AG-ReID scenarios, we define three evaluation protocols with query $\rightarrow$ gallery being: Top $\rightarrow$ Side, Side $\rightarrow$ Top, and Top-Side $\rightarrow$ Top-Side.
+

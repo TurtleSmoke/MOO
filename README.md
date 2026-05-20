@@ -44,6 +44,9 @@ The background in the depth map is set to $1e^{10}$ by blender, which can also b
 For running the unpacking script, [uv](https://docs.astral.sh/uv/) is recommended:
 
 ```bash
+# Install uv, if necessary
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 uv sync
 source .venv/bin/activate
 # or using `uv run` directly without activating the environment

@@ -16,3 +16,7 @@ data/
 *.hdf5
 *.json
 *.zip
+
+# Site
+.astro/
+node_modules/

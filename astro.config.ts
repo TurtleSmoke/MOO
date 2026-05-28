@@ -15,6 +15,11 @@ import astroExpressiveCode from "astro-expressive-code";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        ignored: ["**/data/**", "**/splits/**"],
+      },
+    },
   },
   markdown: {
     remarkPlugins: [remarkMath],

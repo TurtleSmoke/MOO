@@ -20,5 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
-.idea/
+# Jetbrains IDE
+.idea
+
+# Dataset files
+data/
+*.hdf5
+*.json
+*.zip

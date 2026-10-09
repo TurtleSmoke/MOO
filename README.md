@@ -14,18 +14,23 @@ spanning 360° in azimuth and -25° to 90° in elevation.
 
 ## Download
 
-MOO can be downloaded in two ways.
-
 **Option 1: [Download MOO.zip](https://kalisteo.cea.fr/index.php/moo-dataset-en/) from Kalisteo**
 
-The archive contains:
+The archive contains the packed data only:
 
 ```
 MOO.zip
-├── data.hdf5                                           # RGB images and depth maps packed
-├── metadata.json                                       # Annotations and identity labels
-├── LICENSE                                             # License file (CC BY-NC 4.0)
-└── splits/
+├── data.hdf5           # RGB images and depth maps packed
+└── metadata.json       # Annotations and identity labels
+```
+
+Unzip it at the root of this repository, then generate the split files with `make_splits.py` (see [Splits](#splits)):
+
+```
+MOO/                                                    # this repository
+├── data.hdf5                                           # from MOO.zip
+├── metadata.json                                       # from MOO.zip
+└── splits/                                             # from python make_splits.py
     ├── train_{top,side,topside}.txt                    # Training splits
     └── test_{top,side,topside}_{query,gallery}.txt     # Testing splits
 ```
@@ -40,7 +45,7 @@ query = load_dataset("CEAai/MOO", "top", split="query")  # Top -> Side
 gallery = load_dataset("CEAai/MOO", "side", split="gallery")
 ```
 
-Once downloaded and unpacked, the dataset structure is as follows:
+After unpacking `data.hdf5` with `pack.py` (see [Usage](#usage)), the dataset structure is as follows:
 
 ```
 data/

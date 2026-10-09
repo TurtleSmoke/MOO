@@ -2,15 +2,19 @@
 interface Props {
   src: string;
   alt?: string;
+  height?: string;
 }
-const { src, alt } = Astro.props;
+const { src, alt, height = "500px" } = Astro.props;
 ---
 
 <model-viewer
-  class="my-6 overflow-hidden rounded-lg bg-zinc-200 dark:bg-zinc-800"
+  class="my-6 w-full overflow-hidden rounded-lg bg-zinc-200 dark:bg-zinc-800"
+  style={`height: ${height}`}
   alt={alt}
   src={src}
-  camera-controls></model-viewer>
+  camera-controls
+  camera-orbit="150deg 75deg auto"
+  auto-rotate></model-viewer>
 <script>
   import "@google/model-viewer";
 </script>

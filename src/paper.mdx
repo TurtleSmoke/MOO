@@ -52,10 +52,13 @@ import cow5Model from "./assets/cows/cow5.glb?url";
 {/*     <Fragment slot="caption">MOO: A synthetic dataset for systematic analysis and real-world transferability. The workflow encompasses (1) individual generation via procedural coat textures; (2) dataset rendering from 128 calibrated viewpoints spanning full azimuth and 0°–85° elevation; and (3) systematic viewpoint analysis and real-world transfer.</Fragment> */}
 </Figure>
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <ModelViewer src={cow74Model} alt="3D model of a MOO cow identity" height="360px" />
-  <ModelViewer src={cow5Model} alt="3D model of another MOO cow identity" height="360px" />
-</div>
+<Figure>
+  <div slot="figure" class="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+    <ModelViewer src={cow74Model} alt="Example textured cow mesh" height="360px" />
+    <ModelViewer src={cow5Model} alt="Another example textured cow mesh" height="360px" />
+  </div>
+  <Fragment slot="caption">Example textured meshes. Every MOO identity shares the same cow mesh; only the procedural coat texture changes. These two textures are illustrative and do not correspond to specific dataset identities.</Fragment>
+</Figure>
 
 MOO (Multi-view Oriented Observations) is a synthetic dataset for cattle re-identification. It comprises 128,000 images of 1,000 individuals. Designed for systematic viewpoint analysis in AG-ReID, each image is annotated with its azimuth and elevation, camera calibration data, and depth maps. MOO enables rigorous study of the impact of viewpoint variations on identification performance, and serves as an effective pre-training source for transfer to real-world data.
 

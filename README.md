@@ -2,6 +2,9 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.04314-b31b1b.svg)](https://arxiv.org/abs/2603.04314)
+[![CVPRW 2026](https://img.shields.io/badge/CVPRW%202026-CV4Animals-1f6feb.svg)](https://www.cv4animals.com/)
+
+Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
 
 ## Overview
 
@@ -87,7 +90,9 @@ A dataloader compatible with [FastReID](https://github.com/jdai-cv/fast-Reid) is
     title = {MOO: A Multi-view Oriented Observations Dataset for Viewpoint Analysis in Cattle Re-Identification},
     author = {Grolleau, William and Chaouch, Achraf and Sabourin, Astrid and Lapouge, Guillaume and Achard, Catherine},
     journal = {arXiv preprint arXiv:2603.04314},
-    year = {2026}
+    note = {Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival},
+    year = {2026},
+    doi = {10.48550/arXiv.2603.04314}
 }
 
 ```

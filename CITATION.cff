@@ -49,6 +49,8 @@ preferred-citation:
       given-names: Catherine
   year: 2026
   journal: "arXiv preprint"
+  notes: "Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival"
+  doi: "10.48550/arXiv.2603.04314"
   identifiers:
     - type: other
       value: "arXiv:2603.04314"

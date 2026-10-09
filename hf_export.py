@@ -7,7 +7,7 @@ Split membership comes from make_splits.py, so the Hub and the split files canno
 Shards are written with pyarrow directly (datasets' writer takes ~1.5 s per row on the 512x512 depth
 arrays) and existing shards are skipped, so an interrupted run resumes where it stopped.
 
-Usage: uv run --group hf python hf_export.py --out hf_export [--repo CEAai/MOO] [--limit 8]
+Usage: uv run --group hf python hf_export.py --out hf_export [--repo cea-list-ia/MOO] [--limit 8]
 """
 
 import argparse

@@ -3,6 +3,7 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.04314-b31b1b.svg)](https://arxiv.org/abs/2603.04314)
 [![CVPRW 2026](https://img.shields.io/badge/CVPRW%202026-CV4Animals-1f6feb.svg)](https://www.cv4animals.com/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-CEAai%2FMOO-yellow.svg)](https://huggingface.co/datasets/CEAai/MOO)
 
 Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
 
@@ -13,7 +14,9 @@ spanning 360° in azimuth and -25° to 90° in elevation.
 
 ## Download
 
-**[Download MOO.zip](https://kalisteo.cea.fr/index.php/moo-dataset-en/)**
+MOO can be downloaded in two ways.
+
+**Option 1: [Download MOO.zip](https://kalisteo.cea.fr/index.php/moo-dataset-en/) from Kalisteo**
 
 The archive contains:
 
@@ -25,6 +28,16 @@ MOO.zip
 └── splits/
     ├── train_{top,side,topside}.txt                    # Training splits
     └── test_{top,side,topside}_{query,gallery}.txt     # Testing splits
+```
+
+**Option 2: [Hugging Face](https://huggingface.co/datasets/CEAai/MOO)**, with the evaluation protocols as configs:
+
+```python
+from datasets import load_dataset
+
+train = load_dataset("CEAai/MOO", "topside", split="train")
+query = load_dataset("CEAai/MOO", "top", split="query")  # Top -> Side
+gallery = load_dataset("CEAai/MOO", "side", split="gallery")
 ```
 
 Once downloaded and unpacked, the dataset structure is as follows:
@@ -41,6 +54,16 @@ data/
 
 Files are named `cow{id}_{view_id}`, where `view_id` indexes the viewpoint in the 128-point grid.
 The background in the depth map is set to $1e^{10}$ by blender, which can also be used to mask out the background.
+
+## Splits
+
+Identities are split 500/500 (even IDs train, odd IDs test). Views `0-63` are side views (elevation < 30°) and
+views `64-127` are top views (elevation > 30°). [`make_splits.py`](make_splits.py) defines the protocol, including the
+fixed query/gallery assignment of each test identity, and writes the split files used by [`MOO.py`](MOO.py):
+
+```bash
+python make_splits.py  # splits/train_{top,side,topside}.txt, splits/test_{top,side,topside}_{query,gallery}.txt
+```
 
 ## Setup
 

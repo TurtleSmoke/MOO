@@ -15,6 +15,9 @@ dependencies = [
 dev = [
     "ruff>=0.15.6",
 ]
+hf = [
+    "datasets>=5.1.0",
+]
 
 [tool.ruff]
 line-length = 120

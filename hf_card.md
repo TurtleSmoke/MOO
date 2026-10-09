@@ -62,11 +62,11 @@ Each config (`top`, `side`, `topside`) has `train`, `query` and `gallery` splits
 ```python
 from datasets import load_dataset
 
-train = load_dataset("CEAai/MOO", "topside", split="train")
+train = load_dataset("cea-list-ia/MOO", "topside", split="train")
 
 # Top -> Side
-query = load_dataset("CEAai/MOO", "top", split="query")
-gallery = load_dataset("CEAai/MOO", "side", split="gallery")
+query = load_dataset("cea-list-ia/MOO", "top", split="query")
+gallery = load_dataset("cea-list-ia/MOO", "side", split="gallery")
 # Side -> Top: ("side", "query") vs ("top", "gallery"); Top-Side -> Top-Side: ("topside", ...) for both
 ```
 

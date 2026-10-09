@@ -7,7 +7,7 @@ Split membership comes from make_splits.py, so the Hub and the split files canno
 Shards are written with pyarrow directly (datasets' writer takes ~1.5 s per row on the 512x512 depth
 arrays) and existing shards are skipped, so an interrupted run resumes where it stopped.
 
-Usage: uv run --group hf python hf_export.py --out hf_export [--repo cea-list-ia/MOO] [--limit 8]
+Usage: uv run --group hf python hf_export.py --out hf_export [--repo cea-list-ia/MOO [--private]] [--limit 8]
 """
 
 import argparse
@@ -104,6 +104,7 @@ def main():
     parser.add_argument("--out", type=Path, required=True, help="local folder mirrored to the Hub repo")
     parser.add_argument("--src", type=Path, default=Path("."), help="folder with data.hdf5 and metadata.json")
     parser.add_argument("--repo", help="upload to this dataset repo once all shards are written")
+    parser.add_argument("--private", action="store_true", help="create the repo as private")
     parser.add_argument("--limit", type=int, help="rows per subset, for a dry run")
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
@@ -121,7 +122,7 @@ def main():
 
     if args.repo:
         api = HfApi()
-        api.create_repo(args.repo, repo_type="dataset", exist_ok=True)
+        api.create_repo(args.repo, repo_type="dataset", private=args.private, exist_ok=True)
         api.upload_large_folder(repo_id=args.repo, folder_path=args.out, repo_type="dataset")
 
 

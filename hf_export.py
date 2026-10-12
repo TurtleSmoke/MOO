@@ -123,7 +123,16 @@ def main():
     if args.repo:
         api = HfApi()
         api.create_repo(args.repo, repo_type="dataset", private=args.private, exist_ok=True)
-        api.upload_folder(repo_id=args.repo, folder_path=args.out, repo_type="dataset", commit_message="Upload MOO")
+        # one commit per file: the Xet upload token expires after ~15 min and a slow uplink cannot push a
+        # whole-folder commit in time; files already on the Hub are skipped, so re-running resumes
+        done = set(api.list_repo_files(args.repo, repo_type="dataset"))
+        files = sorted(p.relative_to(args.out).as_posix() for p in args.out.rglob("*") if p.is_file())
+        todo = [f for f in files if not f.startswith(".cache/") and f not in done]
+        for i, f in enumerate(todo, 1):
+            api.upload_file(
+                path_or_fileobj=args.out / f, path_in_repo=f, repo_id=args.repo, repo_type="dataset", commit_message=f
+            )
+            print(f"uploaded {i}/{len(todo)} {f}", flush=True)
 
 
 if __name__ == "__main__":

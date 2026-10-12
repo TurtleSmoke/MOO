@@ -3,7 +3,7 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.04314-b31b1b.svg)](https://arxiv.org/abs/2603.04314)
 [![CVPRW 2026](https://img.shields.io/badge/CVPRW%202026-CV4Animals-1f6feb.svg)](https://www.cv4animals.com/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-cea--list--ia%2FMOO-yellow.svg)](https://huggingface.co/datasets/cea-list-ia/MOO)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-CEAai%2FMOO-yellow.svg)](https://huggingface.co/datasets/CEAai/MOO)
 
 Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
 
@@ -35,14 +35,14 @@ MOO/                                                    # this repository
     └── test_{top,side,topside}_{query,gallery}.txt     # Testing splits
 ```
 
-**Option 2: [Hugging Face](https://huggingface.co/datasets/cea-list-ia/MOO)**, with the evaluation protocols as configs:
+**Option 2: [Hugging Face](https://huggingface.co/datasets/CEAai/MOO)**, with the evaluation protocols as configs:
 
 ```python
 from datasets import load_dataset
 
-train = load_dataset("cea-list-ia/MOO", "topside", split="train")
-query = load_dataset("cea-list-ia/MOO", "top", split="query")  # Top -> Side
-gallery = load_dataset("cea-list-ia/MOO", "side", split="gallery")
+train = load_dataset("CEAai/MOO", "topside", split="train")
+query = load_dataset("CEAai/MOO", "top", split="query")  # Top -> Side
+gallery = load_dataset("CEAai/MOO", "side", split="gallery")
 ```
 
 After unpacking `data.hdf5` with `pack.py` (see [Usage](#usage)), the dataset structure is as follows:

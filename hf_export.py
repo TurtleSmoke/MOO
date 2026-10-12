@@ -123,7 +123,7 @@ def main():
     if args.repo:
         api = HfApi()
         api.create_repo(args.repo, repo_type="dataset", private=args.private, exist_ok=True)
-        api.upload_large_folder(repo_id=args.repo, folder_path=args.out, repo_type="dataset")
+        api.upload_folder(repo_id=args.repo, folder_path=args.out, repo_type="dataset", commit_message="Upload MOO")
 
 
 if __name__ == "__main__":

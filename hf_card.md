@@ -46,13 +46,13 @@ configs:
 
 Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
 
-MOO provides **128,000 images** of 1,000 synthetic cattle identities rendered from 128 calibrated viewpoints,
+MOO provides 128,000 images of 1,000 synthetic cattle identities rendered from 128 calibrated viewpoints,
 spanning 360° in azimuth and -25° to 90° in elevation, with depth maps and camera parameters for every image.
 
 ## Protocol
 
 Identities are split 500/500: even IDs for training, odd IDs for testing.
-Views `0-63` are **side** views (elevation < 30°), views `64-127` are **top** views (elevation > 30°).
+Views `0-63` are side views (elevation < 30°), views `64-127` are top views (elevation > 30°).
 For each test identity, half of its top views and half of its side views are queries, the rest are gallery.
 The split definition lives in [`make_splits.py`](https://github.com/TurtleSmoke/MOO/blob/main/make_splits.py).
 

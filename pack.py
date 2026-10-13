@@ -11,13 +11,14 @@ import argparse
 import json
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
+
 import h5py
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor
 
 
 @contextmanager

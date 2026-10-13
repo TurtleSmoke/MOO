@@ -1,11 +1,10 @@
-# encoding: utf-8
-import re
 import os.path as osp
+import re
 
 from fastreid.data.datasets import DATASET_REGISTRY
 from fastreid.data.datasets.bases import ImageDataset
 
-__all__ = [
+__all__ = [  # noqa: RUF022 (grouped by role)
     # Training
     "MOO_TRAIN_TOP",
     "MOO_TRAIN_SIDE",
@@ -50,23 +49,9 @@ class MOOBase(ImageDataset):
         self.dataset_dir = osp.join(self.root, self.dataset_dir)
 
         splits_dir = osp.join(self.dataset_dir, "splits")
-        train = (
-            self._load_split(osp.join(splits_dir, f"train_{train_split}.txt"))
-            if train_split
-            else []
-        )
-        query = (
-            self._load_split(osp.join(splits_dir, f"test_{query}_query.txt"), camid=0)
-            if query
-            else []
-        )
-        gallery = (
-            self._load_split(
-                osp.join(splits_dir, f"test_{gallery}_gallery.txt"), camid=1
-            )
-            if gallery
-            else []
-        )
+        train = self._load_split(osp.join(splits_dir, f"train_{train_split}.txt")) if train_split else []
+        query = self._load_split(osp.join(splits_dir, f"test_{query}_query.txt"), camid=0) if query else []
+        gallery = self._load_split(osp.join(splits_dir, f"test_{gallery}_gallery.txt"), camid=1) if gallery else []
 
         super().__init__(train, query, gallery, **kwargs)
 
@@ -74,7 +59,8 @@ class MOOBase(ImageDataset):
         if not osp.exists(txt_path):
             raise FileNotFoundError(f"Split file not found: {txt_path}")
 
-        paths = map(str.strip, open(txt_path).readlines())
+        with open(txt_path) as f:
+            paths = [line.strip() for line in f]
         rows = [
             (
                 osp.join(self.dataset_dir, line),

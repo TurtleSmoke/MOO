@@ -13,7 +13,7 @@ import argparse
 from pathlib import Path
 
 NUM_IDS = 1000
-VIEWS = {"side": range(0, 64), "top": range(64, 128), "topside": range(0, 128)}
+VIEWS = {"side": range(64), "top": range(64, 128), "topside": range(128)}
 
 QUERY_VIEWS = {
     int(cow): {int(v) for v in views.split()}

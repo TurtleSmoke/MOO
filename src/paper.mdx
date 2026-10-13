@@ -46,10 +46,12 @@ import ModelViewer from "./components/ModelViewer.astro";
 import gabstract from "./assets/gabstract.svg?raw";
 import cow74Model from "./assets/cows/cow74.glb?url";
 import cow5Model from "./assets/cows/cow5.glb?url";
+import viewpointFigure from "./assets/moo-viewpoint.png";
+import viewpointGrid from "./assets/moo-dataset-viewpoint.png";
 
 <Figure>
     <Fragment slot="figure" set:html={gabstract}  />
-{/*     <Fragment slot="caption">MOO: A synthetic dataset for systematic analysis and real-world transferability. The workflow encompasses (1) individual generation via procedural coat textures; (2) dataset rendering from 128 calibrated viewpoints spanning full azimuth and 0°–85° elevation; and (3) systematic viewpoint analysis and real-world transfer.</Fragment> */}
+{/*     <Fragment slot="caption">MOO: A synthetic dataset for systematic analysis and real-world transferability. The workflow encompasses (1) individual generation via procedural coat textures. (2) dataset rendering from 128 calibrated viewpoints spanning full azimuth and 0°-85° elevation, and (3) systematic viewpoint analysis and real-world transfer.</Fragment> */}
 </Figure>
 
 <Figure>
@@ -63,6 +65,22 @@ import cow5Model from "./assets/cows/cow5.glb?url";
 MOO (Multi-view Oriented Observations) is a synthetic dataset for cattle re-identification. It comprises 128,000 images of 1,000 individuals. Designed for systematic viewpoint analysis in AG-ReID, each image is annotated with its azimuth and elevation, camera calibration data, and depth maps. MOO enables rigorous study of the impact of viewpoint variations on identification performance, and serves as an effective pre-training source for transfer to real-world data.
 
 MOO is publicly available at [https://github.com/TurtleSmoke/MOO](https://github.com/TurtleSmoke/MOO), and on Hugging Face at [CEAai/MOO](https://huggingface.co/datasets/CEAai/MOO).
+
+## Viewpoints
+
+Each individual is rendered from 128 viewpoints at a fixed camera distance, with 16 azimuths over the full circle and 8 elevations from −20° to 85°.
+
+<Figure>
+  <Picture slot="figure" src={viewpointFigure} alt="MOO camera sphere and example camera views" />
+  <Fragment slot="caption">Spherical camera coordinates, with azimuth φ, elevation θ and radius r (01). The reference (φ, θ) = (0°, 0°) shows a cow facing left. Views A, B and C (02) illustrate how the camera position changes the projection of the coat.</Fragment>
+</Figure>
+
+<Figure>
+  <div slot="figure" class="w-full md:w-3/4">
+    <Picture src={viewpointGrid} alt="One MOO individual rendered across 8 azimuths and 8 elevations" />
+  </div>
+  <Fragment slot="caption">One MOO individual rendered at the center of each viewpoint partition, with 8 elevations (rows) and 8 azimuths (columns). Dataset images add a small jitter around these centers.</Fragment>
+</Figure>
 
 ## Citation
 

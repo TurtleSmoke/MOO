@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pipx run --spec huggingface_hub hf upload CEAai/MOO hf_card.md README.md --repo-type dataset --commit-message "docs: sync dataset card from GitHub ${GITHUB_SHA::7}"
+      - run: >-
+          pipx run --spec huggingface_hub hf upload CEAai/MOO hf_card.md README.md --repo-type dataset --commit-message "docs: sync dataset card from GitHub ${GITHUB_SHA::7}"
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

@@ -43,6 +43,9 @@ from datasets import load_dataset
 train = load_dataset("CEAai/MOO", "topside", split="train")
 query = load_dataset("CEAai/MOO", "top", split="query")  # Top -> Side
 gallery = load_dataset("CEAai/MOO", "side", split="gallery")
+
+# without depth (~35% of the data): stream and fetch only the requested columns
+query = load_dataset("CEAai/MOO", "top", split="query", streaming=True, columns=["image", "id", "view_id"])
 ```
 
 After unpacking `data.hdf5` with `pack.py` (see [Usage](#usage)), the dataset structure is as follows:

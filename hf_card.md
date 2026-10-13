@@ -70,6 +70,15 @@ gallery = load_dataset("CEAai/MOO", "side", split="gallery")
 # Side -> Top: ("side", "query") vs ("top", "gallery"); Top-Side -> Top-Side: ("topside", ...) for both
 ```
 
+The default download includes depth (~35% of the data). To skip it, stream and select columns; only the
+requested columns are fetched (without `streaming=True`, whole files are downloaded and the columns dropped afterwards):
+
+```python
+query = load_dataset("CEAai/MOO", "top", split="query", streaming=True, columns=["image", "id", "view_id"])
+```
+
+Use `.with_format("numpy")` to get `depth` as a float32 array.
+
 ## Fields
 
 | Field | Type | Description |

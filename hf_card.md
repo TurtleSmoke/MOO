@@ -17,11 +17,11 @@ configs:
     default: true
     data_files:
       - split: train
-        path: [data/train_top-*, data/train_side-*]
+        path: [ data/train_top-*, data/train_side-* ]
       - split: query
-        path: [data/test_top_query-*, data/test_side_query-*]
+        path: [ data/test_top_query-*, data/test_side_query-* ]
       - split: gallery
-        path: [data/test_top_gallery-*, data/test_side_gallery-*]
+        path: [ data/test_top_gallery-*, data/test_side_gallery-* ]
   - config_name: top
     data_files:
       - split: train
@@ -44,14 +44,15 @@ configs:
 
 [Paper (arXiv:2603.04314)](https://arxiv.org/abs/2603.04314) · [Code](https://github.com/TurtleSmoke/MOO) · [Project page](https://turtlesmoke.dev/MOO/)
 
-Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
+Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals),
+non-archival.
 
 MOO provides 128,000 images of 1,000 synthetic cattle identities rendered from 128 calibrated viewpoints,
 spanning 360° in azimuth and -25° to 90° in elevation, with depth maps and camera parameters for every image.
 
 ## Protocol
 
-Identities are split 500/500: even IDs for training, odd IDs for testing.
+Identities are split 500/500, with even IDs for training and odd IDs for testing.
 Views `0-63` are side views (elevation < 30°), views `64-127` are top views (elevation > 30°).
 For each test identity, half of its top views and half of its side views are queries, the rest are gallery.
 The split definition lives in [`make_splits.py`](https://github.com/TurtleSmoke/MOO/blob/main/make_splits.py).
@@ -67,10 +68,10 @@ train = load_dataset("CEAai/MOO", "topside", split="train")
 # Top -> Side
 query = load_dataset("CEAai/MOO", "top", split="query")
 gallery = load_dataset("CEAai/MOO", "side", split="gallery")
-# Side -> Top: ("side", "query") vs ("top", "gallery"); Top-Side -> Top-Side: ("topside", ...) for both
+# Side -> Top uses ("side", "query") vs ("top", "gallery"), Top-Side -> Top-Side uses ("topside", ...) for both
 ```
 
-The default download includes depth (~35% of the data). To skip it, stream and select columns; only the
+The default download includes depth (~35% of the data). To skip it, stream and select columns. Only the
 requested columns are fetched (without `streaming=True`, whole files are downloaded and the columns dropped afterwards):
 
 ```python
@@ -81,17 +82,17 @@ Use `.with_format("numpy")` to get `depth` as a float32 array.
 
 ## Fields
 
-| Field | Type | Description |
-|---|---|---|
-| `image` | image | 512×512 RGB render |
-| `depth` | float32 512×512 | depth map; background is `1e10` and can be used as a mask |
-| `id` | int32 | identity, `0-999` |
-| `view_id` | int32 | viewpoint index in the 128-point grid |
-| `view` | string | coarse direction label (`front`, `back-left`, `top-right`, …) |
-| `azimuth`, `elevation` | float64 | camera angles in degrees |
-| `location` | float64[3] | camera position in world coordinates |
-| `cam2world` | float64 4×4 | camera-to-world matrix |
-| `K` | float64 3×3 | camera intrinsics |
+| Field                  | Type            | Description                                                   |
+|------------------------|-----------------|---------------------------------------------------------------|
+| `image`                | image           | 512×512 RGB render                                            |
+| `depth`                | float32 512×512 | depth map, the background is `1e10` and can be used as a mask |
+| `id`                   | int32           | identity, `0-999`                                             |
+| `view_id`              | int32           | viewpoint index in the 128-point grid                         |
+| `view`                 | string          | coarse direction label (`front`, `back-left`, `top-right`, …) |
+| `azimuth`, `elevation` | float64         | camera angles in degrees                                      |
+| `location`             | float64[3]      | camera position in world coordinates                          |
+| `cam2world`            | float64 4×4     | camera-to-world matrix                                        |
+| `K`                    | float64 3×3     | camera intrinsics                                             |
 
 ## License
 

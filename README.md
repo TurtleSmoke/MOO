@@ -5,7 +5,8 @@
 [![CVPRW 2026](https://img.shields.io/badge/CVPRW%202026-CV4Animals-1f6feb.svg)](https://www.cv4animals.com/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-CEAai%2FMOO-yellow.svg)](https://huggingface.co/datasets/CEAai/MOO)
 
-Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals), non-archival.
+Presented at the CVPR 2026 Workshop on Computer Vision for Animal Behavior Tracking and Modeling (CV4Animals),
+non-archival.
 
 ## Overview
 
@@ -44,7 +45,7 @@ train = load_dataset("CEAai/MOO", "topside", split="train")
 query = load_dataset("CEAai/MOO", "top", split="query")  # Top -> Side
 gallery = load_dataset("CEAai/MOO", "side", split="gallery")
 
-# without depth (~35% of the data): stream and fetch only the requested columns
+# without depth (~35% of the data), stream and fetch only the requested columns
 query = load_dataset("CEAai/MOO", "top", split="query", streaming=True, columns=["image", "id", "view_id"])
 ```
 
@@ -112,7 +113,9 @@ Run `python pack.py --help` for the full list of options.
 
 ## FastReID Integration
 
-A dataloader compatible with [FastReID](https://github.com/jdai-cv/fast-Reid) is provided in [`MOO.py`](MOO.py). Copy it to `fastreid/data/datasets/MOO.py` in your FastReID installation, update the `__init__.py` to include relevant train/test splits, and use the dataset name `MOO` in your FastReID config.
+A dataloader compatible with [FastReID](https://github.com/jdai-cv/fast-Reid) is provided in [`MOO.py`](MOO.py). Copy it
+to `fastreid/data/datasets/MOO.py` in your FastReID installation, update the `__init__.py` to include relevant
+train/test splits, and use the dataset name `MOO` in your FastReID config.
 
 ## License
 

@@ -114,6 +114,11 @@ Run `python pack.py --help` for the full list of options.
 
 A dataloader compatible with [FastReID](https://github.com/jdai-cv/fast-Reid) is provided in [`MOO.py`](MOO.py). Copy it to `fastreid/data/datasets/MOO.py` in your FastReID installation, update the `__init__.py` to include relevant train/test splits, and use the dataset name `MOO` in your FastReID config.
 
+## License
+
+Copyright (c) 2026 Commissariat à l'énergie atomique et aux énergies alternatives (CEA).
+MOO and its toolkit are released under the [CC BY-NC 4.0](LICENSE) license.
+
 ## Citation
 
 ```bibtex

@@ -93,6 +93,11 @@ Use `.with_format("numpy")` to get `depth` as a float32 array.
 | `cam2world` | float64 4×4 | camera-to-world matrix |
 | `K` | float64 3×3 | camera intrinsics |
 
+## License
+
+Copyright (c) 2026 Commissariat à l'énergie atomique et aux énergies alternatives (CEA).
+MOO is released under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+
 ## Citation
 
 ```bibtex
